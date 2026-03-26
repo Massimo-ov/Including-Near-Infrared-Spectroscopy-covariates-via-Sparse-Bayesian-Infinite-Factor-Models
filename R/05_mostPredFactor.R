@@ -78,4 +78,46 @@
   pervar_mean <- apply(pervar_prop, c(1,2), mean)        # p x k
   pervar_ci_low <- apply(pervar_prop, c(1,2), quantile, 0.025)
   pervar_ci_high<- apply(pervar_prop, c(1,2), quantile, 0.975)
+
+#PLOT FOR IDENTIFY THE INDEX OF H* ALIAS THE MOST PREDICTIVE FACTOR
+ # posizione finta per Y
+  x_y <- min(labels) - diff(range(labels))/20
   
+  # limiti asse X includendo Y
+  x_lim <- c(x_y, max(labels))
+  
+  # --- PLOT SOLO SPETTRO ---
+  matplot(
+    labels,
+    pervar_mean[-1, ],
+    type="l", lwd = 2,
+    lty=1,
+    col=1:k,
+    xlab="Wavelength",
+    ylab="Variance fraction",
+    xlim = x_lim     # <-- QUESTO È IL FIX
+  )
+  
+  # --- AGGIUNGO PUNTI PER Y ---
+  for(h in 1:k){
+    points(
+      x_y,
+      pervar_mean[1, h],
+      col=h,
+      pch=16,
+      cex=2
+    )
+  }
+  
+  # etichetta Y leggermente sotto
+  text(
+    x_y,
+    par("usr")[3],   # fondo asse Y
+    "Y",
+    pos=1,
+    xpd=NA           # permette di uscire leggermente dal box
+  )
+  
+  legend("topright", legend=paste0("F",1:k), col=1:k, lty=1, bty = "n",      # no box
+         cex = 0.9,
+         ncol = ifelse(k > 6, 2, 1))
