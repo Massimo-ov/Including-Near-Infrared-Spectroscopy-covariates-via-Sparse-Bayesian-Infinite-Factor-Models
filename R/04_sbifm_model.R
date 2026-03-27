@@ -208,3 +208,28 @@
   cat(sprintf("MSE (scaled):    %.6f\n", mse_sc))
   cat(sprintf("MSE (original):  %.6f\n", mse_or))
   cat("=============================\n")
+
+#PLOT LOGLIKELIHOOD
+library(ggplot2)
+library(gridExtra) 
+  #loglike
+  df_ll <- data.frame(
+    Iterazione = 1:length(loglike),
+    LogLik = loglike )
+  p_ll <- ggplot(subset(df_ll,Iterazione >5000), aes(x = Iterazione, y = LogLik)) +
+    geom_line(color = "steelblue", linewidth = 0.3) +
+    theme_minimal(base_size = 13) +
+    labs(x = "Iterazioni", y = "Log-verosimiglianza") +
+    theme(plot.title = element_text(hjust = 0.5, face = "bold"))
+  
+  # andamento di k 
+  df_k <- data.frame(
+    Iterazione = 1:length(k_star_history),
+    K_star = k_star_history)
+  p_k <- ggplot(subset(df_k,Iterazione >5000), aes(x = Iterazione, y = K_star)) +
+    geom_line(color = "darkgreen", linewidth = 0.3) +
+    theme_minimal(base_size = 13) +
+    labs(x = "Iterazioni", y = expression(k^"*")) +
+    theme(plot.title = element_text(hjust = 0.5, face = "bold"))
+  
+  grid.arrange(p_ll, p_k, nrow=2)
