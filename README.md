@@ -1,6 +1,6 @@
 # Including Near-Infrared Spectroscopy Covariates via Sparse Bayesian Infinite Factor Models
 
-This repository contains the R scripts used for the short paper *"Including Near-Infrared Spectroscopy Covariates via Sparse Bayesian Infinite Factor Models"*, co-authored with Alessandro Lanteri and Guillaume Kon Kam King, and submitted to SIS 2026.
+This repository contains the R scripts used for the short paper *"Including Near-Infrared Spectroscopy Covariates via Sparse Bayesian Infinite Factor Models"*, **co-authored with Alessandro Lanteri and Guillaume Kon Kam King**, and submitted to SIS 2026.
 
 The code is organized into six scripts covering preprocessing, benchmark models, the SBIFM implementation, factor interpretation, and the figures reported in the paper.
 
@@ -8,7 +8,7 @@ The code is organized into six scripts covering preprocessing, benchmark models,
 
 ### `01_data_preprocess.R`
 
-Preprocesses the biscuit NIRS data. Observation 23 is removed as an outlier, following the literature (Brown et al., 2001). The script also includes the optional wavelength subsampling step, allowing the analysis to be run either on the full spectrum ($ p \approx 700 \u007f$) or on the reduced 256-wavelength setting. The response variable is selected by choosing one of the four constituents: fat, flour, sugar, or water.
+Preprocesses the biscuit NIRS data. Observation 23 is removed as an outlier, following the literature (Brown et al., 2001). The script also includes the optional wavelength subsampling step, allowing the analysis to be run either on the full spectrum (p = 700) or on the reduced 256-wavelength setting. The response variable is selected by choosing one of the four constituents: fat, flour, sugar, or water.
 
 ### `02_pls.R`
 
