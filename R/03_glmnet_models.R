@@ -3,6 +3,12 @@
   
   # install.packages("glmnet")
   library(glmnet)
+  library(fds)
+  library(MASS)
+  data(labp)
+  data(labc)
+  data(nirp)
+  data(nirc)
   
   # DATA
   y_train_df <- as.data.frame(t(labc))
