@@ -1,4 +1,3 @@
-# Including-Near-Infrared-Spectroscopy-covariates-via-Sparse-Bayesian-Infinite-Factor-Models
 # Including Near-Infrared Spectroscopy Covariates via Sparse Bayesian Infinite Factor Models
 
 This repository contains the R scripts used for the short paper *"Including Near-Infrared Spectroscopy Covariates via Sparse Bayesian Infinite Factor Models"*, co-authored with Alessandro Lanteri and Guillaume Kon Kam King, and submitted to SIS 2026.
