@@ -8,7 +8,7 @@ The code is organized into six scripts covering preprocessing, benchmark models,
 
 ### `01_data_preprocess.R`
 
-Preprocesses the biscuit NIRS data. Observation 23 is removed as an outlier, following the literature (Brown et al., 2001). The script also includes the optional wavelength subsampling step, allowing the analysis to be run either on the full spectrum (p = 700) or on the reduced 256-wavelength setting. The response variable is selected by choosing one of the four constituents: fat, flour, sugar, or water.
+Preprocesses the biscuit NIRS data. Observation 23 is removed as an outlier, following the literature (Brown et al., 2001). The script also includes the optional wavelength subsampling step, allowing the analysis to be run either on the full spectrum (`p = 700`) or on the reduced 256-wavelength setting. The response variable is selected by choosing one of the four constituents: fat, flour, sugar, or water.
 
 ### `02_pls.R`
 
