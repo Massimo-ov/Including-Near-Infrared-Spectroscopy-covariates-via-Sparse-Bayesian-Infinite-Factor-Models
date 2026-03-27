@@ -1,0 +1,18 @@
+### Precomputed SBIFM Samples
+
+This repository includes precomputed samples from the SBIFM model to avoid the high computational cost of re-running the full MCMC procedure.
+
+* Files such as `lambda_samples_f.rds` contain posterior samples of the lambda parameters for the SBIFM model (see script `R/04_sbifm_model.R`).
+* The suffix `_256` (e.g., `lambda_samples_f_256.rds`) indicates that the samples were obtained using a subsampled version of the data, where the original spectral dimension (p ≈ 700) was reduced to 256 wavelengths.
+* Files without `_256` refer to the full, non-reduced dataset.
+
+Samples are provided for each response variable:
+
+* `f` = fat
+* `fl` = flour
+* `su` = sugar
+* `w` = water
+
+The same naming convention applies to `sigma_samples_*.rds`, which contain posterior samples of the noise variance.
+
+Using these precomputed samples, the final SBIFM script (see `R/04_sbifm_model.R`) can be used to compute regression coefficients (beta) and generate predictions without re-running the full model.
