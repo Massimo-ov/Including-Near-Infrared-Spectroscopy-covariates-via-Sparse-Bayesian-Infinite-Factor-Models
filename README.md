@@ -1,8 +1,41 @@
 # Including Near-Infrared Spectroscopy Covariates via Sparse Bayesian Infinite Factor Models
 
-This repository contains the R scripts used for the short paper *"Including Near-Infrared Spectroscopy Covariates via Sparse Bayesian Infinite Factor Models"*, **co-authored with Alessandro Lanteri and Guillaume Kon Kam King**, and submitted to SIS 2026.
+This repository contains the R scripts used for the short paper *"Including Near-Infrared Spectroscopy Covariates via Sparse Bayesian Infinite Factor Models"*, co-authored with Alessandro Lanteri and Guillaume Kon Kam King, and submitted to SIS 2026.
 
-The code is organized into six scripts covering preprocessing, benchmark models, the SBIFM implementation, factor interpretation, and the figures reported in the paper.
+The code is organized into six scripts covering data preprocessing, benchmark models, the SBIFM implementation, factor interpretation, and the figures reported in the paper.
+
+## Required packages
+
+The repository relies on a small set of R packages. Most are available on CRAN, while `infinitefactor` must be installed from GitHub.
+
+### CRAN packages
+
+* `fds` (data import for the biscuit NIRS dataset)
+* `pls` (Partial Least Squares model)
+* `glmnet` (Ridge and LASSO regression)
+* `ggplot2` (diagnostic plots)
+* `gridExtra` (plot arrangement)
+
+### Non-CRAN package
+
+* `infinitefactor` (factor rotation, alignment, and posterior summaries)
+
+### Installation
+
+You can install the CRAN packages with:
+
+```r
+install.packages(c("fds", "pls", "glmnet", "ggplot2", "gridExtra"))
+```
+
+For the GitHub package, use:
+
+```r
+install.packages("remotes")
+remotes::install_github("EwanPoworoznek/infinitefactor")
+```
+
+All other functions used in the scripts are part of base R.
 
 ## Repository structure
 
@@ -12,7 +45,7 @@ Preprocesses the biscuit NIRS data. Observation 23 is removed as an outlier, fol
 
 ### `02_pls.R`
 
-Fits Partial Least Squares (PLS) models using the `plsR` package after preprocessing. The script assumes that the wavelength setting and response variable have already been selected.
+Fits Partial Least Squares (PLS) models using the `pls` package after preprocessing. The script assumes that the wavelength setting and response variable have already been selected.
 
 ### `03_glmnet_models.R`
 
@@ -33,6 +66,13 @@ Produces the figures included in the paper: the MSPE dotplot comparing the two d
 ## Notes
 
 * The data are publicly available in the original R packages and are not redistributed here.
+* The repository is kept intentionally minimal and focused on reproducibility of the paper results.
+* SBIFM is computationally intensive; the code is provided for full reproducibility, while benchmark models can be run in a much shorter time.
+
+## Reference
+
+If you use this code, please cite the corresponding short paper.
+
 * The repository is kept intentionally minimal and focused on reproducibility of the paper results.
 * SBIFM is computationally intensive; the code is provided for full reproducibility, while benchmark models can be run in a much shorter time.
 
