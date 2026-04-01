@@ -1,7 +1,5 @@
 # pacchetti
-  library(infinitefactor)   # CRAN/GitHub pack with jointRot, msf, lmean, etc.
-  library(matrixStats)      # convenient row/col summaries
-  library(abind)            # bind arrays if needed
+  library(infinitefactor)   # CRAN/GitHub pack with jointRot, msf, lmean, etc
   
   # --- Input che ci aspettiamo ---
   # Lambda_samples : lista length T, ogni elemento p x k (matrici)
