@@ -1,6 +1,6 @@
 #BISCUIT NIRS DATASET, OSBORNE 1984
 library(fds)
-library(MASS)
+
 data(labp)
 data(labc)
 data(nirp)
