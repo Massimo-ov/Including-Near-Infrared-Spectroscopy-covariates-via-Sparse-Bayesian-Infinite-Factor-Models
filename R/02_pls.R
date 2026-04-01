@@ -1,5 +1,5 @@
 # PLS MODEL, RUN AFTER 01_preprocess_data.R
-library(plsr)
+library(pls)
 pls_model <- plsr(y_train ~ X_train,
                    ncomp = 30,
                    validation = "CV")
