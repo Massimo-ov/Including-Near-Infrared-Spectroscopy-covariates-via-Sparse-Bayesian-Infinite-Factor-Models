@@ -4,7 +4,6 @@
   # install.packages("glmnet")
   library(glmnet)
   library(fds)
-  library(MASS)
   data(labp)
   data(labc)
   data(nirp)
