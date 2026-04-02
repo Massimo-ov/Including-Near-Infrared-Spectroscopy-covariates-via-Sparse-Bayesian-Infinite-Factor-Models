@@ -29,3 +29,8 @@ df_train <- cbind(Dip[-23,],df_train)
 y_test<-scale(labp[1,])
 df_test <-  scale(df_test, center= TRUE, scale = TRUE)
 df_test <- cbind(y_test,df_test)
+
+y_train <- df_train[,1]
+X_train <- df_train[,-1]
+y_test  <- df_test[,1]
+X_test  <- df_test[,-1]
